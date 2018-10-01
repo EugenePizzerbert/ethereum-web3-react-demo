@@ -11,15 +11,7 @@
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod",
-    "lint": "eslint . --ext .js",
-    "precommit": "echo '      > Partially staged *.js files will be fully staged and committed\n      > This is the side effect of `git add` after eslint fix\n'; lint-staged"
-  },
-  "lint-staged": {
-    "*.js": [
-      "yarn eslint --fix",
-      "git add",
-      "yarn test --bail --findRelatedTests --silent"
-    ]
+    "lint": "eslint . --ext .js"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -65,9 +57,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "husky": "^0.14.3",
     "jest": "^22.0.4",
-    "lint-staged": "^6.0.1",
     "react-test-renderer": "^16.2.0",
     "redux-mock-store": "^1.4.0",
     "webpack-dev-server": "^2.10.0"

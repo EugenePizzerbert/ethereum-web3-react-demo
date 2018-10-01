@@ -1,6 +1,5 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import authReducer from '../reducers/auth';
 
 let composeEnhancers = compose;
 if (process.env.NODE_ENV === 'development') {
@@ -12,7 +11,6 @@ if (process.env.NODE_ENV === 'development') {
 export default () => {
   return createStore(
     combineReducers({
-      auth: authReducer,
     }),
     composeEnhancers(applyMiddleware(thunk)),
   );
